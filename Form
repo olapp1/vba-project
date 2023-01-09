@@ -49,6 +49,34 @@ Private Sub ENTER_Button_Click()
         Controls("TextBox" & i).Enabled = False
         Controls("TextBox" & i).BackColor = Color(i - 1)
     Next
+    If TextBox6.Value <> "" Then
+        Call Word(TextBox6.Value, TextBox7.Value, TextBox8.Value, TextBox9.Value, TextBox10.Value)
+        For i = 6 To 10
+            Controls("TextBox" & i).Enabled = False
+            Controls("TextBox" & i).BackColor = Color(i - 6)
+        Next i
+    End If
+    If TextBox11.Value <> "" Then
+    Call Word(TextBox11.Value, TextBox12.Value, TextBox13.Value, TextBox14.Value, TextBox15.Value)
+    For i = 11 To 15
+        Controls("TextBox" & i).Enabled = False
+        Controls("TextBox" & i).BackColor = Color(i - 11)
+    Next
+    End If
+    If TextBox16.Value <> "" Then
+    Call Word(TextBox16.Value, TextBox17.Value, TextBox18.Value, TextBox19.Value, TextBox20.Value)
+    For i = 16 To 20
+        Controls("TextBox" & i).Enabled = False
+        Controls("TextBox" & i).BackColor = Color(i - 16)
+    Next
+    End If
+    If TextBox21.Value <> "" Then
+    Call Word(TextBox21.Value, TextBox22.Value, TextBox23.Value, TextBox24.Value, TextBox25.Value)
+    For i = 21 To 25
+        Controls("TextBox" & i).Enabled = False
+        Controls("TextBox" & i).BackColor = Color(i - 21)
+    Next
+    End If
 
 End Sub
 
