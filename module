@@ -1,0 +1,56 @@
+Public Check(5) As String
+Sub RunWordleTool()
+    UserForm1.Show
+End Sub
+Sub Word(Letter1, Letter2, Letter3, Letter4, Letter5)
+
+Dim Words() As String
+ReDim Words(5)
+Dim arrSplitStrings1() As String
+Dim outputArr As Variant
+
+
+Words(0) = Letter1
+Words(1) = Letter2
+Words(2) = Letter3
+Words(3) = Letter4
+Words(4) = Letter5
+
+
+arrSplitStrings1() = Split(Worksheets("5_letters").Range("A2").Value, ",")
+
+For i = LBound(arrSplitStrings1, 1) To UBound(arrSplitStrings1, 1)
+    If UCase(Words(i)) = UCase(arrSplitStrings1(i)) Then
+        Check(i) = 1
+    ElseIf IsInArray(LCase(Words(i)), arrSplitStrings1()) = True Then
+        Check(i) = 2
+    ElseIf IsInArray(LCase(Words(i)), arrSplitStrings1()) = False Then
+        Check(i) = 0
+    End If
+Next i
+
+End Sub
+Function Color(i)
+If Check(i) = 1 Then
+    Colorek = RGB(0, 255, 0)
+ElseIf Check(i) = 0 Then
+    Colorek = RGB(255, 0, 0)
+ElseIf Check(i) = 2 Then
+    Colorek = RGB(255, 255, 0)
+End If
+
+Color = Colorek
+
+End Function
+Public Function IsInArray(stringToBeFound As String, arr As Variant) As Boolean
+    Dim i
+    For i = LBound(arr) To UBound(arr)
+        If arr(i) = stringToBeFound Then
+            IsInArray = True
+            Exit Function
+        End If
+    Next i
+    IsInArray = False
+
+End Function
+
