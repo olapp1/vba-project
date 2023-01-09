@@ -1,0 +1,249 @@
+Private Sub A_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = A_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub B_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = B_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub C_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = C_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub D_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = D_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub E_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = E_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub ENTER_Button_Click()
+    Call Word(TextBox1.Value, TextBox2.Value, TextBox3.Value, TextBox4.Value, TextBox5.Value)
+    For i = 1 To 5
+        Controls("TextBox" & i).Enabled = False
+        Controls("TextBox" & i).BackColor = Color(i - 1)
+    Next
+
+End Sub
+
+Private Sub F_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = F_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub G_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = G_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub H_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = H_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub I_Button_Click()
+     For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = I_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub J_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = J_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub K_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = K_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub L_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = L_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub M_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = M_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub N_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = N_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub O_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = O_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub P_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = P_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+Private Sub Q_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = Q_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub R_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = R_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub S_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = S_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub T_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = T_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+Private Sub U_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = U_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+Private Sub UserForm_Initialize()
+    TextBox1.MaxLength = 1
+    TextBox2.MaxLength = 1
+End Sub
+
+
+Private Sub V_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = V_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub W_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = W_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub X_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = X_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub Y_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = Y_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
+
+Private Sub Z_Button_Click()
+    For i = 1 To 25
+        If Controls("TextBox" & i) = "" Then
+            Controls("TextBox" & i) = Z_Button.Caption
+            Exit For
+    End If
+    Next
+End Sub
