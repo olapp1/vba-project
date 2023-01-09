@@ -1,4 +1,5 @@
 Public Check(5) As String
+
 Sub RunWordleTool()
     UserForm1.Show
 End Sub
@@ -40,6 +41,7 @@ ElseIf Check(i) = 2 Then
 End If
 
 Color = Colorek
+Check(i) = 0
 
 End Function
 Public Function IsInArray(stringToBeFound As String, arr As Variant) As Boolean
