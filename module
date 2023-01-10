@@ -1,56 +1,79 @@
-Public Check(5) As String
+Dim password() As String
+Dim LastRow As Long
+Dim Check(5) As String
+Dim Trial As Integer
+Dim Win As Boolean
 Sub RunWordleTool()
+    LastRow = Worksheets("5_letters").Cells.Find("*", SearchOrder:=xlByRows, SearchDirection:=xlPrevious).Row
+    password() = Split(Worksheets("5_letters").Cells(WorksheetFunction.RandBetween(2, LastRow), 1).Value, ",")
     UserForm1.Show
+    Dim Check(5) As String
 End Sub
-Sub Word(Letter1, Letter2, Letter3, Letter4, Letter5)
 
-Dim Words() As String
-ReDim Words(5)
-Dim arrSplitStrings1() As String
-Dim outputArr As Variant
+Function Word(Letter1, Letter2, Letter3, Letter4, Letter5)
 
+    Dim Words() As String
+    Dim OutputArray() As String
+    ReDim Words(5)
+    
+    Words(0) = Letter1
+    Words(1) = Letter2
+    Words(2) = Letter3
+    Words(3) = Letter4
+    Words(4) = Letter5
+    
 
-Words(0) = Letter1
-Words(1) = Letter2
-Words(2) = Letter3
-Words(3) = Letter4
-Words(4) = Letter5
+            For i = LBound(password(), 1) To UBound(password(), 1)
+                If UCase(Words(i)) = UCase(password(i)) Then
+                    Check(i) = 1
+                ElseIf IsInArray(LCase(Words(i)), password()) = True Then
+                    j = SearchElement(LCase(Words(i)), password())
+                    k = SearchElement(Words(i), Words())
+                    If j <= k Then
+                        Check(i) = 2
+                    Else
+                    Check(i) = 0
+                    End If
+                Else
+                    Check(i) = 0
+                End If
+                Next i
+        
 
-
-arrSplitStrings1() = Split(Worksheets("5_letters").Range("A2").Value, ",")
-
-For i = LBound(arrSplitStrings1, 1) To UBound(arrSplitStrings1, 1)
-    If UCase(Words(i)) = UCase(arrSplitStrings1(i)) Then
-        Check(i) = 1
-    ElseIf IsInArray(LCase(Words(i)), arrSplitStrings1()) = True Then
-        Check(i) = 2
-    ElseIf IsInArray(LCase(Words(i)), arrSplitStrings1()) = False Then
-        Check(i) = 0
-    End If
-Next i
-
-End Sub
-Function Color(i)
-If Check(i) = 1 Then
-    Colorek = RGB(0, 255, 0)
-ElseIf Check(i) = 0 Then
-    Colorek = RGB(255, 0, 0)
-ElseIf Check(i) = 2 Then
-    Colorek = RGB(255, 255, 0)
-End If
-
-Color = Colorek
-
+Word = Win
 End Function
-Public Function IsInArray(stringToBeFound As String, arr As Variant) As Boolean
+Function Color(i)
+    If Check(i) = 1 Then
+        Chosen = RGB(0, 255, 0)
+    ElseIf Check(i) = 0 Then
+        Chosen = RGB(255, 0, 0)
+    ElseIf Check(i) = 2 Then
+        Chosen = RGB(255, 255, 0)
+    End If
+    
+    Color = Chosen
+    Check(i) = 0
+End Function
+Function IsInArray(stringToBeFound As String, Arr As Variant) As Boolean
     Dim i
-    For i = LBound(arr) To UBound(arr)
-        If arr(i) = stringToBeFound Then
+    For i = LBound(Arr) To UBound(Arr)
+        If Arr(i) = stringToBeFound Then
             IsInArray = True
             Exit Function
         End If
     Next i
     IsInArray = False
-
 End Function
-
+Function SearchElement(SearchLitter As String, Arr As Variant) As Integer
+    Dim found As Integer
+    found = 0
+    For i = LBound(Arr) To UBound(Arr):
+        If Arr(i) = SearchLitter Then
+            found = found + 1
+    End If
+    Next
+  SearchElement = found
+End Function
+Function WordInBase(Attempt As String, Words As Variant) As Boolean
+   WordInBase = Not IsError(Application.Match(Attempt, Words, 0))
+End Function
