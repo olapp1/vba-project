@@ -1,6 +1,6 @@
 Private Sub A_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = A_Button.Caption
             Exit For
     End If
@@ -9,7 +9,7 @@ End Sub
 
 Private Sub B_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = B_Button.Caption
             Exit For
     End If
@@ -18,7 +18,7 @@ End Sub
 
 Private Sub C_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = C_Button.Caption
             Exit For
     End If
@@ -27,16 +27,27 @@ End Sub
 
 Private Sub D_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = D_Button.Caption
             Exit For
+    End If
+    Next
+End Sub
+Private Sub DELETE_Button_Click()
+    For i = 1 To 25
+    If Controls("TextBox" & i) = "" Then
+        If i = 1 Then
+            TextBox1.Value = ""
+        Else
+            Controls("TextBox" & (i - 1)) = ""
+        End If
     End If
     Next
 End Sub
 
 Private Sub E_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = E_Button.Caption
             Exit For
     End If
@@ -44,33 +55,55 @@ Private Sub E_Button_Click()
 End Sub
 
 Private Sub ENTER_Button_Click()
+    
+    
+    If TextBox1 <> "" And TextBox2 <> "" And TextBox3 <> "" And TextBox4 <> "" And TextBox5 <> "" Then
     Call Word(TextBox1.Value, TextBox2.Value, TextBox3.Value, TextBox4.Value, TextBox5.Value)
     For i = 1 To 5
         Controls("TextBox" & i).Enabled = False
+        Controls("TextBox" & (5 + i)).Enabled = True
         Controls("TextBox" & i).BackColor = Color(i - 1)
+        
     Next
-    If TextBox6.Value <> "" Then
+    For i = 6 To 10
+        Controls("TextBox" & i).Visible = True
+    Next i
+    End If
+
+    If TextBox6 <> "" And TextBox7 <> "" And TextBox8 <> "" And TextBox9 <> "" And TextBox10 <> "" Then
         Call Word(TextBox6.Value, TextBox7.Value, TextBox8.Value, TextBox9.Value, TextBox10.Value)
         For i = 6 To 10
             Controls("TextBox" & i).Enabled = False
             Controls("TextBox" & i).BackColor = Color(i - 6)
         Next i
+        For i = 11 To 15
+        Controls("TextBox" & i).Visible = True
+        Next i
     End If
-    If TextBox11.Value <> "" Then
+    If TextBox11 <> "" And TextBox12 <> "" And TextBox13 <> "" And TextBox14 <> "" And TextBox15 <> "" Then
     Call Word(TextBox11.Value, TextBox12.Value, TextBox13.Value, TextBox14.Value, TextBox15.Value)
     For i = 11 To 15
         Controls("TextBox" & i).Enabled = False
         Controls("TextBox" & i).BackColor = Color(i - 11)
     Next
+    For i = 16 To 20
+        Controls("TextBox" & i).Visible = True
+    Next i
+   
     End If
-    If TextBox16.Value <> "" Then
+    If TextBox16 <> "" And TextBox17 <> "" And TextBox18 <> "" And TextBox19 <> "" And TextBox20 <> "" Then
     Call Word(TextBox16.Value, TextBox17.Value, TextBox18.Value, TextBox19.Value, TextBox20.Value)
+    
     For i = 16 To 20
         Controls("TextBox" & i).Enabled = False
         Controls("TextBox" & i).BackColor = Color(i - 16)
     Next
+    For i = 21 To 25
+        Controls("TextBox" & i).Visible = True
+    Next i
     End If
-    If TextBox21.Value <> "" Then
+    
+    If TextBox21 <> "" And TextBox22 <> "" And TextBox23 <> "" And TextBox24 <> "" And TextBox25 <> "" Then
     Call Word(TextBox21.Value, TextBox22.Value, TextBox23.Value, TextBox24.Value, TextBox25.Value)
     For i = 21 To 25
         Controls("TextBox" & i).Enabled = False
@@ -91,7 +124,7 @@ End Sub
 
 Private Sub G_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = G_Button.Caption
             Exit For
     End If
@@ -100,7 +133,7 @@ End Sub
 
 Private Sub H_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = H_Button.Caption
             Exit For
     End If
@@ -109,7 +142,7 @@ End Sub
 
 Private Sub I_Button_Click()
      For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = I_Button.Caption
             Exit For
     End If
@@ -118,7 +151,7 @@ End Sub
 
 Private Sub J_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = J_Button.Caption
             Exit For
     End If
@@ -127,7 +160,7 @@ End Sub
 
 Private Sub K_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = K_Button.Caption
             Exit For
     End If
@@ -136,7 +169,7 @@ End Sub
 
 Private Sub L_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = L_Button.Caption
             Exit For
     End If
@@ -145,7 +178,7 @@ End Sub
 
 Private Sub M_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = M_Button.Caption
             Exit For
     End If
@@ -154,7 +187,7 @@ End Sub
 
 Private Sub N_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = N_Button.Caption
             Exit For
     End If
@@ -163,7 +196,7 @@ End Sub
 
 Private Sub O_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = O_Button.Caption
             Exit For
     End If
@@ -172,7 +205,7 @@ End Sub
 
 Private Sub P_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = P_Button.Caption
             Exit For
     End If
@@ -180,7 +213,7 @@ Private Sub P_Button_Click()
 End Sub
 Private Sub Q_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = Q_Button.Caption
             Exit For
     End If
@@ -189,7 +222,7 @@ End Sub
 
 Private Sub R_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = R_Button.Caption
             Exit For
     End If
@@ -198,7 +231,7 @@ End Sub
 
 Private Sub S_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = S_Button.Caption
             Exit For
     End If
@@ -207,7 +240,7 @@ End Sub
 
 Private Sub T_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = T_Button.Caption
             Exit For
     End If
@@ -215,11 +248,15 @@ Private Sub T_Button_Click()
 End Sub
 Private Sub U_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = U_Button.Caption
             Exit For
     End If
     Next
+End Sub
+
+Private Sub UserForm_Activate()
+
 End Sub
 
 Private Sub UserForm_Click()
@@ -228,12 +265,15 @@ End Sub
 Private Sub UserForm_Initialize()
     TextBox1.MaxLength = 1
     TextBox2.MaxLength = 1
+    For i = 6 To 25
+         Controls("TextBox" & i).Visible = False
+    Next i
 End Sub
 
 
 Private Sub V_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = V_Button.Caption
             Exit For
     End If
@@ -242,7 +282,7 @@ End Sub
 
 Private Sub W_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = W_Button.Caption
             Exit For
     End If
@@ -251,7 +291,7 @@ End Sub
 
 Private Sub X_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = X_Button.Caption
             Exit For
     End If
@@ -260,7 +300,7 @@ End Sub
 
 Private Sub Y_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = Y_Button.Caption
             Exit For
     End If
@@ -269,7 +309,7 @@ End Sub
 
 Private Sub Z_Button_Click()
     For i = 1 To 25
-        If Controls("TextBox" & i) = "" Then
+        If Controls("TextBox" & i) = "" And Controls("TextBox" & i).Visible = True Then
             Controls("TextBox" & i) = Z_Button.Caption
             Exit For
     End If
